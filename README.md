@@ -4,6 +4,18 @@ This is a small stub of FORTRAN code which is used to simulate a model component
 
 ## Compilation
 
+### Spack compilation
+
+Follow instructions to set up to use the ACCESS-NRI spack configuration](https://access-hive.org.au/getting_started/spack/).
+
+Install using spack:
+```bash
+spack install access-test-model %intel@2021.10.0
+```
+In this case the compiler and version are specified, but they can be changed.
+
+### Direct compilation
+
 On `gadi` this can be compiled like so
 
 ```bash
