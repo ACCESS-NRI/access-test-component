@@ -16,6 +16,6 @@ message("---- CMAKE_Fortran_COMPILER: " ${CMAKE_Fortran_COMPILER})
 
 # Source code
 add_executable(hello_world.exe src/hello_world.f90)
-target_link_libraries(hello_world.exe PUBLIC MPI::MPI_Fortran)
+target_link_libraries(hello_world.exe)
 
 install(TARGETS hello_world.exe     DESTINATION "bin")
