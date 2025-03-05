@@ -29,6 +29,20 @@ Note that `CMAKE_PREFIX_PATH` is specified in the `spack-config` so this is requ
 
 ## Sample Run
 
+### Spack
+
+```bash
+$ spack load access-test-model
+$ mpirun -n 6 $(which hello_world.exe)
+ Hello World from process:            1 of            6
+ Hello World from process:            2 of            6
+ Hello World from process:            3 of            6
+ Hello World from process:            4 of            6
+ Hello World from process:            5 of            6
+ Hello World from process:            0 of            6
+```
+
+### Direct
 ```bash
 $ mpirun -n 6 build/hello_world.exe 
  Hello World from process:            0 of            6
