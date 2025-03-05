@@ -7,10 +7,13 @@ This is a small stub of FORTRAN code which is used to simulate a model component
 On `gadi` this can be compiled like so
 
 ```bash
-module load openmpi
-FC=mpif90 ccmake -B build
-FC=mpif90 cmake --build build
+module load openmpi/4.1.7
+module load intel-compiler/2021.10.0 
+
+cd stub && CMAKE_PREFIX_PATH=/apps/openmpi/4.1.7/include/Intel cmake . && make
 ```
+
+Note that `CMAKE_PREFIX_PATH` is specified in the `spack-config` so this is required to be specified explicitly to mimic what is done when built inside `spack`.
 
 ## Sample Run
 
