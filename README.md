@@ -6,7 +6,7 @@ This is a small stub of FORTRAN code which is used to simulate a model component
 
 ### Spack compilation
 
-Follow instructions to set up to use the ACCESS-NRI spack configuration](https://access-hive.org.au/getting_started/spack/).
+Follow instructions to set up to use the [ACCESS-NRI spack configuration](https://access-hive.org.au/getting_started/spack/).
 
 Install using spack:
 ```bash
