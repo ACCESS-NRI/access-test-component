@@ -10,7 +10,7 @@ Follow instructions to set up to use the [ACCESS-NRI spack configuration](https:
 
 Install using spack:
 ```bash
-spack install access-test-model %intel@2021.10.0
+spack install access-test-model-component %intel@2021.10.0
 ```
 In this case the compiler and version are specified, but they can be changed.
 
@@ -32,7 +32,7 @@ Note that `CMAKE_PREFIX_PATH` is specified in the `spack-config` so this is requ
 ### Spack
 
 ```bash
-$ spack load access-test-model
+$ spack load access-test-model-component
 $ mpirun -n 6 $(which hello_world.exe)
  Hello World from process:            1 of            6
  Hello World from process:            2 of            6
