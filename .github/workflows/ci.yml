@@ -10,7 +10,7 @@ jobs:
       spack-manifest-path: .github/build/manifests/templates/test.spack.yaml.j2
       spack-manifest-data-path: .github/build/manifests/data/test.spack.yaml.j2.json
       spack-compiler-manifest-path: .github/build/manifests/compilers/test.spack.yaml
-      spack-ref: releases/0.22
+      spack-ref: releases/v0.22
       allow-ssh-into-spack-install: true
 
   outputs:
