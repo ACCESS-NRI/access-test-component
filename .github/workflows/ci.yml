@@ -1,0 +1,25 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build-and-test:
+    uses: access-nri/build-ci/.github/workflows/ci.yml@build-ci-2.0
+    with:
+      spack-manifest-path: .github/build/manifests/templates/test.spack.yaml.j2
+      spack-manifest-data-path: .github/build/manifests/data/test.spack.yaml.j2.json
+      spack-compiler-manifest-path: .github/build/manifests/compilers/test.spack.yaml
+      spack-ref: releases/0.22
+      allow-ssh-into-spack-install: true
+
+  outputs:
+    runs-on: ubuntu-latest
+    needs:
+      - build-and-test
+    steps:
+      - name: Echo job outputs
+        run: |
+          echo "${{ needs.build-and-test.outputs.spec-concretization-graph }}"
+          echo "${{ needs.build-and-test.outputs.spack-files-artifact-url }}"
+          echo "${{ needs.build-and-test.outputs.sha }}"
