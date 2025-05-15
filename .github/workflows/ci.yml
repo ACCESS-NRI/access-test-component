@@ -9,8 +9,9 @@ jobs:
     with:
       spack-manifest-path: .github/build/manifests/templates/test.spack.yaml.j2
       spack-manifest-data-path: .github/build/manifests/data/test.spack.yaml.j2.json
-      spack-compiler-manifest-path: .github/build/manifests/compilers/test.spack.yaml
-      spack-ref: releases/v0.22
+      # spack-compiler-manifest-path: .github/build/manifests/compilers/test.spack.yaml
+      spack-ref: 6eb1ed93e572e8301ec50fe4c3f190bd73d37051
+      spack-packages-ref: '2025.05.000'
       # Testing this so we can see if we can access within cluster
       allow-ssh-into-spack-install: true
 
