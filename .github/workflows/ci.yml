@@ -29,7 +29,7 @@ jobs:
       max-parallel: 5
       matrix:
         file: ${{ fromJson(needs.pre-ci.outputs.matrix) }}
-    uses: access-nri/build-ci/.github/workflows/ci.yml@v2
+    uses: access-nri/build-ci/.github/workflows/ci.yml@234-spack-config-relink-major-properly
     with:
       spack-manifest-path: ${{ matrix.file }}
       allow-ssh-into-spack-install: false  # If true, PR author must ssh into instance to complete job
