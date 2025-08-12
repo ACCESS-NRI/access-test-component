@@ -15,7 +15,7 @@ jobs:
 
       - name: Set up matrix
         id: set-matrix
-        # Find all relevant files under .github/build-ci/manifests
+        # Find all relevant files under .github/build-ci/manifests!!!
         # then output them as a JSON array (minus the last comma)
         run: |
           files=$(find .github/build-ci/manifests/ -iname '*.j2' -printf '"%p",')
@@ -29,11 +29,11 @@ jobs:
       max-parallel: 5
       matrix:
         file: ${{ fromJson(needs.pre-ci.outputs.matrix) }}
-    uses: access-nri/build-ci/.github/workflows/ci.yml@v2
+    uses: access-nri/build-ci/.github/workflows/ci.yml@234-spack-config-relink-major-properly
     with:
       spack-manifest-path: ${{ matrix.file }}
       allow-ssh-into-spack-install: false  # If true, PR author must ssh into instance to complete job
       spack-manifest-data-path: .github/build-ci/data/standard.json
       # spack-packages-ref: main
       # spack-config-ref: main
-      # spack-ref: releases/v0.22
+      spack-ref: 02700dc6da801f9857720fa5533e61e8d86fc969
