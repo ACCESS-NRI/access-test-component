@@ -15,7 +15,7 @@ jobs:
 
       - name: Set up matrix
         id: set-matrix
-        # Find all relevant files under .github/build-ci/manifests
+        # Find all relevant files under .github/build-ci/manifests!
         # then output them as a JSON array (minus the last comma)
         run: |
           files=$(find .github/build-ci/manifests/ -iname '*.j2' -printf '"%p",')
