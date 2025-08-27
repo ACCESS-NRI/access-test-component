@@ -38,3 +38,7 @@ jobs:
       spack-config-ref: main
       spack-ref: releases/v1.0
       container-image-version: :rocky-v1.0
+      spack-oci-buildcache-url: oci://ghcr.io/access-nri/build-ci-buildcache
+    secrets:
+      spack-oci-buildcache-username: ${{ github.actor }}
+      spack-oci-buildcache-password: ${{ secrets.SPACK_OCI_BUILDCACHE_PAT }}
