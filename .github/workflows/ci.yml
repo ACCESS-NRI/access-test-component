@@ -29,16 +29,11 @@ jobs:
       max-parallel: 5
       matrix:
         file: ${{ fromJson(needs.pre-ci.outputs.matrix) }}
-    uses: access-nri/build-ci/.github/workflows/ci.yml@v1.0-image
+    uses: access-nri/build-ci/.github/workflows/ci-github-hosted.yml@v1.0-image
     with:
       spack-manifest-path: ${{ matrix.file }}
-      allow-ssh-into-spack-install: true  # If true, PR author must ssh into instance to complete job
+      allow-ssh-into-spack-install: false  # If true, PR author must ssh into instance to complete job
       spack-manifest-data-path: .github/build-ci/data/standard.json
-      # spack-packages-ref: api-v2
-      spack-config-ref: spack-enable-ci
-      spack-ref: releases/v0.22
-      container-image-version: :rocky
-    #   spack-oci-buildcache-url: oci://ghcr.io/access-nri/build-ci-buildcache
-    # secrets:
-    #   spack-oci-buildcache-username: ${{ github.actor }}
-    #   spack-oci-buildcache-password: ${{ secrets.SPACK_OCI_BUILDCACHE_PAT }}
+      spack-packages-ref: api-v2
+      spack-ref: releases/v1.0
+      container-image-version: :rocky-v1.0-2025.09.000
