@@ -29,11 +29,14 @@ jobs:
       max-parallel: 5
       matrix:
         file: ${{ fromJson(needs.pre-ci.outputs.matrix) }}
-    uses: access-nri/build-ci/.github/workflows/ci.yml@v2
+    # Testing on github-hosted as the image is not yet updated on self-hosted runners
+    uses: access-nri/build-ci/.github/workflows/ci-github-hosted.yml@spack-config-81-git-based-spack-packages-repo_TEST
     with:
       spack-manifest-path: ${{ matrix.file }}
       allow-ssh-into-spack-install: false  # If true, PR author must ssh into instance to complete job
       spack-manifest-data-path: .github/build-ci/data/standard.json
-      # spack-packages-ref: main
-      # spack-config-ref: main
-      # spack-ref: releases/v0.22
+      spack-config-ref: access-spack-packages-as-git-repo
+      builtin-spack-packages-ref: '2025.07.0'
+      access-spack-packages-ref: api-v2
+      spack-ref: releases/v1.0  # Just to test the re-checkout
+      container-image-version: rocky-v1.0-test  # This is the new image that will be pushed
