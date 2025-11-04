@@ -2,9 +2,18 @@ spack:
   specs:
   - access-test-component @git.{{ ref }}
   packages:
+    c:
+      require:
+      - 'intel-oneapi-compilers-classic@2021.10.0'
+    cxx:
+      require:
+      - 'intel-oneapi-compilers-classic@2021.10.0'
+    fortran:
+      require:
+      - 'intel-oneapi-compilers-classic@2021.10.0'
     all:
       require:
-      - '%{{ intel_compiler }} target={{ target }}'
+      - 'target={{ target }}'
   concretizer:
     unify: false
   view: false
