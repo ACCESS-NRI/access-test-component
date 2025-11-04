@@ -39,4 +39,4 @@ jobs:
       builtin-spack-packages-ref: '2025.07.0'
       access-spack-packages-ref: api-v2
       spack-ref: releases/v1.0  # Just to test the re-checkout
-      container-image-version: rocky-v1.0-test  # This is the new image that will be pushed
+      container-image-version: :rocky-v1.0-test  # This is the new image that will be pushed
