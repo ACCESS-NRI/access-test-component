@@ -33,7 +33,7 @@ jobs:
     uses: access-nri/build-ci/.github/workflows/ci-github-hosted.yml@spack-config-81-git-based-spack-packages-repo_TEST
     with:
       spack-manifest-path: ${{ matrix.file }}
-      allow-ssh-into-spack-install: false  # If true, PR author must ssh into instance to complete job
+      allow-ssh-into-spack-install: true  # If true, PR author must ssh into instance to complete job
       spack-manifest-data-path: .github/build-ci/data/standard.json
       spack-config-ref: access-spack-packages-as-git-repo
       builtin-spack-packages-ref: v2025.07.0
