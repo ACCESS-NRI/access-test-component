@@ -38,5 +38,5 @@ jobs:
       spack-config-ref: access-spack-packages-as-git-repo
       builtin-spack-packages-ref: 8e33ef611d39211f80553a726c5cec8a3d3be4a5
       access-spack-packages-ref: 953cd6c325c5584d0772b0a1b754e8abd2c9911f
-      spack-ref: releases/v1.0  # Just to test the re-checkout
+      spack-ref: releases/v0.22  # Testing invalid spack ref for this version of the workflow
       container-image-version: :rocky-v1.0-test  # This is the new image that will be pushed
