@@ -1,6 +1,6 @@
 spack:
   specs:
-  - datetime-fortran
+  - access-test-component@git.{{ ref }} %{{ gcc_compiler }} target={{ target }}
   packages:
     c:
       require:
@@ -13,7 +13,7 @@ spack:
       - '{{ gcc_compiler }}'
     all:
       require:
-      - 'target={{ target}}'
+      - 'target={{ target }}'
   concretizer:
     unify: false
   view: false
