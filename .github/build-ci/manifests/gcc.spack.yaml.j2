@@ -1,10 +1,19 @@
 spack:
   specs:
-  - access-test-component @git.{{ ref }}
+  - access-test-component@git.{{ ref }} %{{ gcc_compiler }} target={{ target }}
   packages:
+    c:
+      require:
+      - '{{ gcc_compiler }}'
+    cxx:
+      require:
+      - '{{ gcc_compiler }}'
+    fortran:
+      require:
+      - '{{ gcc_compiler }}'
     all:
       require:
-      - '%{{ gcc_compiler }} target={{ target}}'
+      - 'target={{ target }}'
   concretizer:
     unify: false
   view: false
