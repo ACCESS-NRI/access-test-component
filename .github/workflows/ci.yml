@@ -35,4 +35,4 @@ jobs:
       spack-manifest-path: ${{ matrix.file }}
       allow-ssh-into-spack-install: false  # If true, PR author must ssh into instance to complete job
       spack-manifest-data-path: .github/build-ci/data/standard.json
-      container-image-version: :rocky-v1.0-2025.12.000-test
+      container-image-version: :rocky-v1.1-2025.12.000-test
