@@ -2,9 +2,13 @@ spack:
   specs:
   - access-test-component @git.{{ ref }}
   packages:
+    gcc:
+      require:
+      - '{{ gcc_compiler_ver }}'
     all:
       require:
-      - '%{{ gcc_compiler }} target={{ target}}'
+      - '%access_gcc'
+      - 'target={{ target }}'
   concretizer:
     unify: false
   view: false
