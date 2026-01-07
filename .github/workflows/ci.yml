@@ -32,6 +32,7 @@ jobs:
     uses: access-nri/build-ci/.github/workflows/ci.yml@264-get-manifest-from-any-repo
     with:
       spack-manifest-repository: codegat-test-org/test
+      spack-manifest-repository-ref: 76f45ff6ea4694b5d1abce3b866e1b1d20ce4c4a
       spack-manifest-path: build-ci-manifests/intel.spack.yaml.j2
       allow-ssh-into-spack-install: false  # If true, PR author must ssh into instance to complete job
       spack-manifest-data-path: build-ci-manifests/standard.json
