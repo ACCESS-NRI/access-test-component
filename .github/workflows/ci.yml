@@ -9,12 +9,12 @@ jobs:
     name: Install and Test
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/access-nri/build-ci-runner:rocky-0.22
+      image: ghcr.io/access-nri/build-ci-runner:rocky-v0.22
       volumes:
       - upstream-data:/dev/null:ro
     services:
       upstream:
-        image: ghcr.io/access-nri/build-ci-runner:rocky-0.22
+        image: ghcr.io/access-nri/build-ci-runner:rocky-v0.22
         volumes:
         - upstream-data:/dev/null:rw
     steps:
