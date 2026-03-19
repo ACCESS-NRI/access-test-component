@@ -14,8 +14,8 @@ jobs:
       - upstream-data:/opt/upstream:ro
     services:
       upstream:
-        image: ghcr.io/access-nri/build-ci-runner:rocky-v0.22
+        image: ghcr.io/access-nri/build-ci-upstream:rocky-v0.22
         volumes:
         - upstream-data:/opt/upstream:rw
     steps:
-    - run: tree /opt/upstream
+    - run: ls -alh /opt/upstream
