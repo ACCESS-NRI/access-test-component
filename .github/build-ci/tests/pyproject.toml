@@ -1,0 +1,5 @@
+[tool.pytest.ini_options]
+markers = [
+    "basic: tests that really should pass",
+    "slow: long-running tests"
+]
