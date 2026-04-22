@@ -1,42 +1,23 @@
-#!/usr/bin/env spack-python
 import pytest
 
-import spack.environment
 import subprocess
-import spack.util.executable
+import shutil
 
-DEFAULT_ENVIRONMENT_PATH: str = "/opt/runner/environments/default"
-
-
-@pytest.fixture(autouse=True)
-def spack_env():
-    # Activate the default environment the packages were installed in, before each test
-    e: spack.environment.Environment = spack.environment.Environment(
-        DEFAULT_ENVIRONMENT_PATH
-    )
-    spack.environment.activate(e)
-
-    if not e.active:
-        raise RuntimeError(
-            f"Couldn't activate the default environment at {DEFAULT_ENVIRONMENT_PATH}"
-        )
-
-    # Return control to the test
-    yield
-
-    # Once the above completes, deactivate the environment
-    spack.environment.deactivate()
 
 @pytest.mark.basic
 class TestBasic:
     def test_binaries_exist(self):
-        spack.util.executable.which("hello_world.exe", required=True)
+        executable = shutil.which("hello_world.exe")
+
+        assert executable is not None, "hello_world.exe should be in PATH"
 
     def test_binaries_run(self):
-        hello_world = spack.util.executable.which("hello_world.exe", required=True)
+        executable = shutil.which("hello_world.exe")
+
+        assert executable is not None, "hello_world.exe should be in PATH"
 
         result = subprocess.run(
-            ["mpirun", "-n", "6", "--allow-run-as-root", hello_world.path],
+            ["mpirun", "-n", "6", "--allow-run-as-root", executable],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             universal_newlines=True,
@@ -50,10 +31,12 @@ class TestBasic:
 @pytest.mark.slow
 class TestSlow:
     def test_many_process_binaries(self):
-        hello_world = spack.util.executable.which("hello_world.exe", required=True)
+        executable = shutil.which("hello_world.exe")
+
+        assert executable is not None, "hello_world.exe should be in PATH"
 
         result = subprocess.run(
-            ["mpirun", "-n", "10", "--allow-run-as-root", hello_world.path],
+            ["mpirun", "-n", "10", "--allow-run-as-root", executable],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             universal_newlines=True,
