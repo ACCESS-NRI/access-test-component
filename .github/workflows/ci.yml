@@ -37,5 +37,5 @@ jobs:
       container-image-version: :rocky-v1.1-2026.04.001
       # builtin-spack-packages-ref: main
       # access-spack-packages-ref: api-v2
-      # spack-config-ref: main
+      spack-config-ref: isolate-cache-config
       # spack-ref: releases/v1.1
