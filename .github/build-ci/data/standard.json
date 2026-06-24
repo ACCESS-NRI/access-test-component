@@ -1,6 +1,6 @@
 {
-    "gcc_compiler_ver": "@15.2",
-    "intel_compiler_ver": "@2021.11.0",
-    "oneapi_compiler_ver": "@2025.2.0",
+    "gcc_compiler_ver": "15.2",
+    "intel_compiler_ver": "2021.11.0",
+    "oneapi_compiler_ver": "2025.2.0",
     "target": "x86_64"
 }
