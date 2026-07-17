@@ -41,3 +41,5 @@ jobs:
       # access-spack-packages-ref: api-v2
       # spack-config-ref: main
       # spack-ref: releases/v1.1
+    permissions:
+      checks: write
